@@ -52,3 +52,38 @@ html, body {
 
 
 /* exercise two */
+.container-two {
+    margin: 50px auto;
+    padding: 15px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.service {
+    width: 30%;
+    padding: 15px;
+    background-color: darkolivegreen;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service a {
+    text-decoration: none;
+    color: aliceblue;
+    align-self: flex-end;
+}
+
+.service.one {
+    background-color: rgb(80, 70, 70);
+}
+
+.service.two {
+    background-color: rgb(105, 70, 70);
+}
+
+.service.three {
+    background-color: cadetblue;
+}

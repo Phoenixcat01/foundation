@@ -112,24 +112,50 @@ html, body {
 }
 .card .thubnail {
     height: 350px;
+    display: flex;
+    flex: 1;
 }
 
 img {
     width: 100%;
     border-radius: 5px;
+    flex: 1;
 }
 
 .container-three .card .description {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    flex: 1;
     background-color: chocolate;
 }
 
 .container-three .card .description .content {
     height: 100px;
     overflow: scroll;
-    
 }
 /* end exercise three */
+
+
+/* exercise three --centering */
+.container-four {
+    width: 95%;
+    height: 500px;
+    border: 2px solid black;
+    margin: 50px auto;
+    padding: 0;
+    display: flex;
+}
+
+.container-four p {
+    width: 100px;
+    height: 100px;
+    background-color: cadetblue;
+    margin: auto;
+    display: flex;
+}
+
+.container-four p span {
+    margin: auto;
+}
+/* end exercise four */
+

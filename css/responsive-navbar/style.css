@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: azure;
+}
+
+nav {
+    display: flex;
+    background-color: bisque;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    width: 30%;
+    list-style: none;
+    justify-content: space-between;
+    background-color: blueviolet;
+}
+
+nav ul li a{
+    text-decoration: none;
+}

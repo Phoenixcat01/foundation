@@ -45,3 +45,20 @@ nav ul li a{
 nav ul li a:hover {
     color: rgb(82, 96, 97);
 }
+
+
+/* responsive */
+/* in tablet */
+@media screen and (max-width: 768px) {
+    nav .logo {
+        font-size: 0.9em;
+    }
+    
+    nav ul {
+        width: 50%;
+    }
+
+    nav ul li a {
+        font-size: 0.8em;
+    }
+}

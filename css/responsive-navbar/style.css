@@ -47,6 +47,24 @@ nav ul li a:hover {
 }
 
 
+/* hamburger menu */
+.toggle-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+nav .toggle-menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: cadetblue;
+    border-radius: 3px;
+}
+
+
+
 /* responsive */
 /* in tablet */
 @media screen and (max-width: 768px) {
@@ -60,5 +78,11 @@ nav ul li a:hover {
 
     nav ul li a {
         font-size: 0.8em;
+    }
+}
+/* in mobile */
+@media screen and (max-width: 576px) {
+    nav ul {
+        display: none;
     }
 }

@@ -6,6 +6,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: azure;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
 }
 
 nav {
@@ -14,16 +18,30 @@ nav {
     justify-content: space-around;
     height: 50px;
     align-items: center;
+    color:cadetblue;
+}
+
+nav .logo {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.5em;
 }
 
 nav ul {
     display: flex;
-    width: 30%;
+    width: 40%;
     list-style: none;
     justify-content: space-between;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 
 nav ul li a{
     text-decoration: none;
+    color:cadetblue;
+    font-size: 0.9em;
+}
+
+nav ul li a:hover {
+    color: rgb(82, 96, 97);
 }

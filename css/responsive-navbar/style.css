@@ -136,9 +136,11 @@ opacity: 0;
         background-color: rgb(255, 237, 215);
         transform: translateX(100%);
         transition: all 1s;
+        opacity: 0;
     }
 
     nav ul.slide {
+        opacity: 1;
         transform: translateX(0);
     }
 }

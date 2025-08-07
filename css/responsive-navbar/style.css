@@ -49,7 +49,7 @@ nav ul li a:hover {
 
 /* hamburger menu */
 .toggle-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 20px;
@@ -121,5 +121,8 @@ opacity: 0;
 @media screen and (max-width: 576px) {
     nav ul {
         display: none;
+    }
+    .toggle-menu {
+        display: flex;
     }
 }

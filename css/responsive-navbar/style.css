@@ -64,6 +64,7 @@ nav ul li a:hover {
     top: -3px;
     cursor: pointer;
     opacity: 0;
+    z-index: 2;
 }
 
 nav .toggle-menu span {
@@ -72,6 +73,31 @@ nav .toggle-menu span {
     height: 3px;
     background-color: cadetblue;
     border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.toggle-menu span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.toggle-menu span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.toggle-menu input:checked ~ span:nth-child(2) {
+transform: rotate(45deg) translate(-1px, -1px);
+background-color: rgb(82, 96, 97);
+}
+
+.toggle-menu input:checked ~ span:nth-child(3) {
+transform: scale(0);
+opacity: 0;
+} 
+
+.toggle-menu input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+    background-color: rgb(82, 96, 97);
 }
 
 

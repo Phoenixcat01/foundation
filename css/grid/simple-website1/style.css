@@ -14,11 +14,17 @@ img {
     width: 100%;
 }
 
+.container {
+    display: grid;
+    gap: 10px;
+}
+
 header {
     display: grid;
     grid-template-areas: 
     'heading heading feature1'
     'heading heading feature2';
+    color: azure;
 }
 
 .hero {
@@ -28,6 +34,13 @@ header {
     background-size: cover;
     background-position: center;
     padding: 50px;
+}
+
+.features {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
 }
 
 .features.feature-1 {
@@ -42,4 +55,43 @@ header {
     background-image: url(../../images/image2.jpeg);
     background-size: cover;
     background-position: center;
+}
+
+.features .price {
+    font-size: 3em;
+}
+
+/* navigation */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    background-color: rgb(49, 49, 49);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* background-color: cadetblue; */
+    text-align: center;
+    gap: 5px;
+}
+
+.menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+    background-color: cadetblue;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }

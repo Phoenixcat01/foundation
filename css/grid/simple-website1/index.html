@@ -23,6 +23,12 @@
                 </div>
             </header>
             <nav class="menu">
+                <div class="toggle-menu">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="brand">
                     <h1>Rifan Tech</h1>
                 </div>
@@ -34,5 +40,13 @@
                 </ul>
             </nav>
         </div>
+        <script>
+            const menuToggle = document.querySelector(".toggle-menu input");
+            const nav = document.querySelector("nav ul");
+
+            menuToggle.addEventListener("click", function () {
+                nav.classList.toggle("slide");
+            });
+        </script>
     </body>
 </html>

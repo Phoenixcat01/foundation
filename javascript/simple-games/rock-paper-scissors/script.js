@@ -1,8 +1,6 @@
-let more = "true";
-while (more) {
-    // menangkap pilihan user
-    let user = prompt("silakan pilih gunting, batu, atau kertas");
 
+// get computer option with function
+function getComputerOption() {
     // menangkap pilihan komputer dengan math.random
     let comp = Math.random();
     if (comp <= 0.34) {
@@ -12,6 +10,15 @@ while (more) {
     } else {
         comp = "gunting";
     }
+    return comp;
+};
+
+let more = "true";
+while (more) {
+    // menangkap pilihan user
+    let user = prompt("silakan pilih gunting, batu, atau kertas");
+    // memanggil function pilihan komputer dengan math.random
+    let comp = getComputerOption();
     // menentukan rules
     let hasil = "";
     if (user === comp) {

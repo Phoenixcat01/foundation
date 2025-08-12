@@ -126,16 +126,8 @@ let wantToPlay = confirm(`hey wanna play?`);
 if (wantToPlay == true) {
     let more = true;
     while (more) {
-        let user = "";
-        let validChoise = ["scissors","paper","rock"];
-        while(!validChoise.includes(user)) {
             // get user choice
             user = prompt("please choose rock, paper, or scissors");
-            if(user === null) {
-                // Handle jika user klik "Cancel"
-                alert(`ok, game canceled`);
-                return;
-            };
             // get computer choice
             let compEng = getComputerOption(["scissors","paper","rock" ]);
             // determine the rules
@@ -153,8 +145,6 @@ if (wantToPlay == true) {
             if (more == false) {
                 alert(`ok, thank's for playing!, see you next time!`);
             }
-        }
-        
     }
 } else {
     alert(`ok, see you later!`);

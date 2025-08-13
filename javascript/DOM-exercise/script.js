@@ -1,4 +1,6 @@
+// #######################
 // DOM selection
+// #######################
 // document.getElementById
 const title = document.getElementById('judul')
 judul.style.backgroundColor = "salmon";
@@ -28,3 +30,14 @@ for (i=0; i<ul.length-1; i++) {
     ul[i].style.border = "2px dashed lightgreen";
 }
 
+
+
+// ########################
+// DOM manipulation
+// ########################
+
+// element.innerhtml
+// element.style.<property>
+// element.setAttribute()
+// element.classList
+// .. and more

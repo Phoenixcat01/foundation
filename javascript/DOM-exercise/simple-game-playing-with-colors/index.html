@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Game Playing With Colors</title>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+            body {
+                text-align: center;
+            }
+            .cadetBlue {
+                background-color: cadetblue;
+            }
+            #redBox {
+                width: 25px;
+                height: 25px;
+                margin: 10px auto;
+                border: 3px solid black;
+                border-radius: 50%;
+                background-color: red;
+            }
+            #greenBox {
+                width: 25px;
+                height: 25px;
+                margin: 10px auto;
+                border: 3px solid black;
+                border-radius: 50%;
+                background-color: green;
+            }
+            #blueBox {
+                width: 25px;
+                height: 25px;
+                margin: 10px auto;
+                border: 3px solid black;
+                border-radius: 50%;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Playing With Colors</h1>
+        <button type="button" id="bChangeColors">Change Colors</button>
+        <br /><br />
+        <div id="redBox"></div>
+        <input type="range" name="inputRed" min="0" max="255" />
+        <div id="greenBox"></div>
+        <input type="range" name="inputGreen" min="0" max="255" />
+        <div id="blueBox"></div>
+        <input type="range" name="inputBlue" min="0" max="255" />
+
+        <script src="script.js"></script>
+    </body>
+</html>

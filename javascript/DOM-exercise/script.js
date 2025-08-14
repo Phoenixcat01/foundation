@@ -24,10 +24,10 @@ const list = document.querySelector('ul li:nth-child(3)');
 list.style.backgroundColor = "lightblue";
 
 // document.querySelectorAll('');
-const ul = document.querySelectorAll('section#b ul li');
-ul[2].style.border = "3px dashed black";
-for (i=0; i<ul.length-1; i++) {
-    ul[i].style.border = "2px dashed lightgreen";
+const li = document.querySelectorAll('section#b ul li');
+li[2].style.border = "3px dashed black";
+for (i=0; i<li.length-1; i++) {
+    li[i].style.border = "2px dashed lightgreen";
 }
 
 
@@ -37,7 +37,34 @@ for (i=0; i<ul.length-1; i++) {
 // ########################
 
 // element.innerhtml
+li[0].innerHTML = `<a href="instagram.com">link ini dibuat dengan js</a>`;
+const sectionATagA = document.querySelector('section#a a');
+sectionATagA.href = "https://www.instagram.com/rifantara_";
+sectionATagA.target = "_blank";
+sectionATagA.rel = "noopener noreferrer";
+sectionATagA.textContent = "link ini dibuat dengan js";
 // element.style.<property>
+li[0].style.backgroundColor = "lightyellow";
 // element.setAttribute()
+const linkUlLi = document.querySelector('section#b ul li a');
+linkUlLi.setAttribute('href', 'https://www.instagram.com/rifantara_');
+linkUlLi.setAttribute('target', '_blank');
+linkUlLi.setAttribute('rel', 'noopener noreferrer');
+// element.getAttribute()
+const linkUlLiHref = linkUlLi.getAttribute('href');
+console.log(linkUlLiHref);
 // element.classList
+const linkUlLiClass = linkUlLi.classList;
+console.log(linkUlLiClass);
+// element.classList.add()
+linkUlLiClass.add('link');
+// element.classList.remove()
+linkUlLiClass.remove('link');
+// element.classList.toggle()
+linkUlLiClass.toggle('link');
+// element.classList.contains()
+const linkUlLiContains = linkUlLiClass.contains('link');
+console.log(linkUlLiContains);
+// element.classList.replace()
+linkUlLiClass.replace('link', 'link2');
 // .. and more

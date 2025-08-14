@@ -217,3 +217,34 @@ newLi38.appendChild(newText38);
 const newLi39 = newLi38.cloneNode(true);
 ul.appendChild(newLi39);
 console.log(newLi39.getRootNode().hash);
+// .. and more
+
+// Manipulation Node (New method) ###
+// parentNode.append()
+const newLi40 = document.createElement('li');
+const newText40 = document.createTextNode('ini adalah text baru dari parentNode.append()');
+newLi40.appendChild(newText40);
+ul.append(newLi40);
+// parentNode.prepend()
+const newLi41 = document.createElement('li');
+const newText41 = document.createTextNode('ini adalah text baru dari parentNode.prepend()');
+newLi41.appendChild(newText41);
+ul.prepend(newLi41);
+// childNode.before()
+const newLi42 = document.createElement('li');
+const newText42 = document.createTextNode('ini adalah text baru dari childNode.before()');
+newLi42.appendChild(newText42);
+ul.childNodes[5].before(newLi42);
+// childNode.after()
+const newLi43 = document.createElement('li');
+const newText43 = document.createTextNode('ini adalah text baru dari childNode.after()');
+newLi43.appendChild(newText43);
+ul.childNodes[0].after(newText43);
+// childNode.remove()
+ul.childNodes[1].remove();
+// childNode.replaceWith()
+const newLi44 = document.createElement('li');
+const newText44 = document.createTextNode('ini adalah text baru dari childNode.replaceWith() yang mereplace dari parentNode.prepend()');
+newLi44.appendChild(newText44);
+ul.childNodes[0].replaceWith(newLi44);
+// .. and more

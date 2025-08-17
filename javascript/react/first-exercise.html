@@ -54,6 +54,24 @@
                         alert("Silakan isi profil Anda terlebih dahulu!");
                     }
                 };
+                function GenderStatus({ isMale }) {
+                    const GenderStatusElement = ({ textContent }) => {
+                        return <h2>{textContent}</h2>;
+                    };
+                    if (isMale === true) {
+                        return (
+                            <GenderStatusElement textContent="You are gentle man!" />
+                        );
+                    } else if (isMale === false) {
+                        return (
+                            <GenderStatusElement textContent="You are not real man!" />
+                        );
+                    } else {
+                        return (
+                            <GenderStatusElement textContent="silakan isi profil Anda terlebih dahulu!" />
+                        );
+                    }
+                }
                 const destinations = [
                     "Bali",
                     "Jakarta",
@@ -67,6 +85,7 @@
                 return (
                     <>
                         <Greating name={name} />
+                        <GenderStatus isMale={isMale} />
                         <EvenButton
                             onClickAction={handleProfil}
                             content="Tell me about your self"

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <!--untuk wadah-->
+        <div id="root"></div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+            magni laborum nam reiciendis iusto nihil <br />voluptates quidem
+            nesciunt illum nisi vitae veritatis minima saepe debitis voluptatum,
+            reprehenderit consectetur culpa. Reiciendis.
+        </p>
+        <script type="text/babel">
+            const container = document.getElementById("root");
+            const root = ReactDOM.createRoot(container);
+
+            function Greating({ name }) {
+                return <h1>Hi, {name ? name : `Passenger`} this is react!</h1>;
+            }
+            const EvenButton = ({ onClickAction = () => {}, content }) => {
+                return (
+                    <button onClick={onClickAction}>
+                        {content ? content : `click me`}
+                    </button>
+                );
+            };
+            function Home() {
+                const [name, setName] = React.useState("");
+                const [isMale, setIsMale] = React.useState(null);
+                const handleProfil = () => {
+                    const userName = prompt(`who are you?`);
+                    const gender = confirm(`are you realman?`);
+
+                    setName(userName);
+                    setIsMale(gender);
+                    if (gender) {
+                        alert(`wow ${userName}, you are real man`);
+                    } else {
+                        alert(`oh ${userName}, so you are not real man`);
+                    }
+                };
+                const handleSecondButton = () => {
+                    if (isMale === true) {
+                        alert(`hi ${name}, you are real man`);
+                    } else if (isMale === false) {
+                        alert(`hi ${name}, you are not real man`);
+                    } else {
+                        alert("Silakan isi profil Anda terlebih dahulu!");
+                    }
+                };
+                const destinations = [
+                    "Bali",
+                    "Jakarta",
+                    "Bandung",
+                    "Yogyakarta",
+                ];
+                const [likes, setlikes] = React.useState(0);
+                function handleLikes() {
+                    setlikes(likes + 1);
+                }
+                return (
+                    <>
+                        <Greating name={name} />
+                        <EvenButton
+                            onClickAction={handleProfil}
+                            content="Tell me about your self"
+                        />
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Eius voluptatem inventore,
+                            <br /> architecto ad impedit iusto quo saepe facere
+                            porro veniam? Minus suscipit eaque corporis esse.
+                            Architecto odio voluptate earum commodi!
+                        </p>
+                        <h3>This is all your destination</h3>
+                        <ul>
+                            {destinations.map((student) => (
+                                <li key={student}>{student}</li>
+                            ))}
+                        </ul>
+                        <EvenButton
+                            onClickAction={() =>
+                                alert(`hi ${name || "Passenger"}`)
+                            }
+                            content="Click Here!"
+                        />
+                        <EvenButton
+                            onClickAction={handleLikes}
+                            content={` like (${likes})`}
+                        />
+                    </>
+                );
+            }
+            root.render(<Home />);
+        </script>
+    </body>
+</html>

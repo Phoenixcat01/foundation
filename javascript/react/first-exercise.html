@@ -35,21 +35,23 @@
                 const [isMale, setIsMale] = React.useState(null);
                 const handleProfil = () => {
                     const userName = prompt(`who are you?`);
-                    const gender = confirm(`are you realman?`);
+                    const gender = confirm(
+                        `Do you really want to learn React?`
+                    );
 
                     setName(userName);
                     setIsMale(gender);
                     if (gender) {
-                        alert(`wow ${userName}, you are real man`);
+                        alert(`wow great ${userName}, you are gentle man!`);
                     } else {
-                        alert(`oh ${userName}, so you are not real man`);
+                        alert(`oh ${userName}, so you are not gentle man`);
                     }
                 };
                 const handleSecondButton = () => {
                     if (isMale === true) {
-                        alert(`hi ${name}, you are real man`);
+                        alert(`hi ${name}, you are gentle man`);
                     } else if (isMale === false) {
-                        alert(`hi ${name}, you are not real man`);
+                        alert(`hi ${name}, you are not gentle man`);
                     } else {
                         alert("Silakan isi profil Anda terlebih dahulu!");
                     }
@@ -58,16 +60,14 @@
                     const GenderStatusElement = ({ textContent }) => {
                         return <h2>{textContent}</h2>;
                     };
-                    let message = isMale ? (
-                        <GenderStatusElement textContent="You are gentle man!" />
-                    ) : (
-                        <GenderStatusElement textContent="You are not real man!" />
-                    );
-                    if (isMale == null) {
-                        message = (
+                    let message =
+                        isMale == null ? (
                             <GenderStatusElement textContent="silakan isi profil Anda terlebih dahulu!" />
+                        ) : isMale ? (
+                            <GenderStatusElement textContent="You are gentle man!" />
+                        ) : (
+                            <GenderStatusElement textContent="You are not gentle man!" />
                         );
-                    }
                     return message;
                 }
                 const destinations = [
@@ -102,9 +102,7 @@
                             ))}
                         </ul>
                         <EvenButton
-                            onClickAction={() =>
-                                alert(`hi ${name || "Passenger"}`)
-                            }
+                            onClickAction={handleSecondButton}
                             content="Click Here!"
                         />
                         <EvenButton

@@ -58,19 +58,17 @@
                     const GenderStatusElement = ({ textContent }) => {
                         return <h2>{textContent}</h2>;
                     };
-                    if (isMale === true) {
-                        return (
-                            <GenderStatusElement textContent="You are gentle man!" />
-                        );
-                    } else if (isMale === false) {
-                        return (
-                            <GenderStatusElement textContent="You are not real man!" />
-                        );
-                    } else {
-                        return (
+                    let message = isMale ? (
+                        <GenderStatusElement textContent="You are gentle man!" />
+                    ) : (
+                        <GenderStatusElement textContent="You are not real man!" />
+                    );
+                    if (isMale == null) {
+                        message = (
                             <GenderStatusElement textContent="silakan isi profil Anda terlebih dahulu!" />
                         );
                     }
+                    return message;
                 }
                 const destinations = [
                     "Bali",

@@ -8,11 +8,19 @@ function Square ({value, onSquereClick}) {
 
 export default function Board() {
   const [squeres, setSqueres] = useState(Array(9).fill(null))
+  const [xIsNext, setXIsNext] = useState(true);
 
   function handleSquereClick(i) {
+    if (squeres[i]) return;
     const nextSqueres = squeres.slice();
-    nextSqueres[i] = 'x';
-    setSqueres(nextSqueres)
+    // if(xIsNext) {
+    //   nextSqueres[i] = 'x';
+    // } else {
+    //   nextSqueres[i] = 'o';
+    // }
+    nextSqueres[i] = xIsNext ? 'x' : 'o';
+    setSqueres(nextSqueres);
+    setXIsNext(!xIsNext);
   }
 
   return (

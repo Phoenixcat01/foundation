@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { useState } from 'react'
 
 
@@ -32,9 +33,7 @@ function calculateWinner(squeres) {
   return false;
 }
 
-function Board() {
-  const [squeres, setSqueres] = useState(Array(9).fill(null))
-  const [xIsNext, setXIsNext] = useState(true);
+function Board({xIsNext, squeres, onPlay}) {
 
   function handleSquereClick(i) {
     if (squeres[i] || calculateWinner(squeres)) return;
@@ -45,8 +44,7 @@ function Board() {
     //   nextSqueres[i] = 'o';
     // }
     nextSqueres[i] = xIsNext ? 'X' : 'O';
-    setSqueres(nextSqueres);
-    setXIsNext(!xIsNext);
+    onPlay(nextSqueres)
   }
 
   const winner = calculateWinner(squeres);
@@ -84,14 +82,38 @@ function Board() {
 };
 
 export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)])
+  const currentSqueres = history[history.length -1];
+
+function handlePlay(nextSqueres) {
+  setHistory([...history, nextSqueres]);
+  setXIsNext(!xIsNext);
+}
+
+const moves = history.map((squeres, move) => {
+  let description = '';
+  if(move > 0) {
+    description = `Move to # ${move} !`;
+  } else {
+    description = `Go to Start!`;
+  }
+
+  return (
+    <li key={move}>
+      <button onClick={() => jumpTo(move)}>{description}</button>
+    </li>
+  )
+})
+
   return (
     <div className="game">
     <div className="game-board">
-      <Board />
+      <Board xIsNext={xIsNext} squeres={currentSqueres} onPlay={handlePlay}/>
     </div>
     <div className="game-info">
       <ol>
-        {/* TODO */}
+        {moves}
       </ol>
     </div>
   </div>

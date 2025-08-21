@@ -35,9 +35,6 @@ function calculateWinner(squeres) {
 
   // Loop to check each winning line
   for (let i = 0; i < lines.length; i++) {
-    // const a = lines[i][0]; // 0
-    // const b = lines[i][1]; // 1
-    // const c = lines[i][2]; // 2
     // Use destructuring to get indices a, b, and c
     const [a,b,c] = lines[i];
     
@@ -66,11 +63,6 @@ function Board({xIsNext, squeres, onPlay}) {
     const nextSqueres = squeres.slice();
     
     // Determine the symbol ('X' or 'O') based on the player's turn.
-    // if(xIsNext) {
-    //   nextSqueres[i] = 'x';
-    // } else {
-    //   nextSqueres[i] = 'o';
-    // }
     nextSqueres[i] = xIsNext ? 'X' : 'O';
 
     // Call the `onPlay` function received from `Game`,
@@ -105,18 +97,6 @@ function Board({xIsNext, squeres, onPlay}) {
           value={value}
           onSquereClick={() => handleSquereClick(i)}/>
       ))}
-
-      {/* Using JSX to render each box manually */}
-      {/* <Square value={squeres[0]} onSquereClick={() => handleSquereClick(0)} />
-      <Square value={squeres[1]} onSquereClick={() => handleSquereClick(1)}/>
-      <Square value={squeres[2]} onSquereClick={() => handleSquereClick(2)}/>
-      <Square value={squeres[3]} onSquereClick={() => handleSquereClick(3)}/>
-      <Square value={squeres[4]} onSquereClick={() => handleSquereClick(4)}/>
-      <Square value={squeres[5]} onSquereClick={() => handleSquereClick(5)}/>
-      <Square value={squeres[6]} onSquereClick={() => handleSquereClick(6)}/>
-      <Square value={squeres[7]} onSquereClick={() => handleSquereClick(7)}/>
-      <Square value={squeres[8]} onSquereClick={() => handleSquereClick(8)}/> */}
-
     </div>
     </>
   )
@@ -150,11 +130,6 @@ export default function Game() {
   const moves = history.map((squeres, move) => {
     let description;
     move > 0 ? description = `Move to # ${move} !` : description = `Go to Start!`;
-    // if(move > 0) {
-    //   description = `Move to # ${move} !`;
-    // } else {
-    //   description = `Go to Start!`;
-    // }
 
     return (
       <li key={move}>

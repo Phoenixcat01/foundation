@@ -11,37 +11,66 @@
     </head>
     <body>
         <div id="root"></div>
+
         <script type="text/babel">
+            // This is a Class Component named 'App' created with old version about create component in react.
+            // It's the main entry point for the application.
             class App extends React.Component {
+                // The constructor is a special method called when a component is created.
+                // It's used to initialize state and bind methods, though it's optional here
+                // since no state is being used.
                 constructor(props) {
+                    // super(props) is a mandatory call that invokes the constructor
+                    // of the parent class (React.Component) to ensure the component is
+                    // properly initialized and can use 'this.props'.
                     super(props);
                 }
+
+                // The render() method is responsible for returning the JSX (UI) to be displayed.
+                // It describes what the component will look like on the screen.
                 render() {
                     return (
+                        // A container div with a className for styling purposes.
+                        // We use 'className' instead of 'class' to avoid a conflict
+                        // with the reserved 'class' keyword in JavaScript.
                         <div className="container">
                             <p>
-                                Hello, <Welcome name={"passenger"} />
+                                Hello,
+                                {/* We render the 'Welcome' component and pass a 'name' prop to it. */}
+                                <Welcome name={"passenger"} />
                             </p>
                         </div>
                     );
                 }
             }
+
+            // This is a Simple Class Component named 'Welcome'.
+            // It's a reusable component that receives a 'name' as a prop.
             class Welcome extends React.Component {
                 constructor(props) {
                     super(props);
                 }
+
+                // The render method displays the name received from the parent component.
                 render() {
                     return (
                         <>
+                            {/* We access the prop using 'this.props.name'. */}
                             <strong>{this.props.name}</strong>
                         </>
                     );
                 }
             }
+
             // old version rendering, below version react 17
             // ReactDOM.render(<App />, document.getElementById("root"));
             // new version rendering, above version react 18
+            // In React 18, we use createRoot() to render the application.
+            // This method creates a "root" that manages the DOM inside the root element.
             const root = ReactDOM.createRoot(document.getElementById("root"));
+
+            // The render method on the root object renders the 'App' component
+            // and its children into the DOM.
             root.render(<App />);
         </script>
     </body>

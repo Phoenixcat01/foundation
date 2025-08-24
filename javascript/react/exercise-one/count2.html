@@ -12,33 +12,52 @@
     <body>
         <div id="root"></div>
         <script type="text/babel">
+            // Get the root DOM element and create a React root instance.
+            // This is the recommended way to render a React app in version 18.
             const container = document.getElementById("root");
             const root = ReactDOM.createRoot(container);
 
+            // This is a functional component named 'Counts'.
+            // It's a modern and concise way to build React components.
             function Counts() {
+                // The useState Hook initializes the 'count' state variable to 0.
+                // It returns an array with the current state value ('count') and a function
+                // to update it ('setCount').
                 const [count, setCount] = React.useState(0);
+
+                // This function increments the count.
+                // We pass a function to setCount to ensure we always use the previous
+                // and most up-to-date state value (prevCount).
                 function increment() {
                     setCount((prevCount) => prevCount + 1);
                 }
 
+                // This function decrements the count, also using the previous state.
                 function decrement() {
                     setCount((prevCount) => prevCount - 1);
                 }
 
+                // This function resets the count to 0.
+                // Since this doesn't depend on the previous state, we can pass a direct value.
                 function reset() {
                     setCount(0);
                 }
 
+                // The component returns JSX (JavaScript XML), which is a mix of JavaScript and HTML-like syntax.
                 return (
+                    // React.Fragment (<>...</>) is used to group multiple elements without adding an extra node to the DOM.
                     <>
+                        {/* Buttons with onClick event handlers to call the functions. */}
                         <button onClick={increment}>Increment</button>
                         <button onClick={decrement}>Decrement</button>
                         <button onClick={reset}>Reset</button>
+                        {/* Display the current value of the 'count' state. */}
                         <h1>count : {count}</h1>
                     </>
                 );
             }
 
+            // Render the 'Counts' component into the DOM.
             root.render(<Counts />);
         </script>
     </body>

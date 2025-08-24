@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Clean code count</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            // Create a React root.
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+
+            // A minimalist functional component.
+            function Counts() {
+                // Use the `useState` hook.
+                const [count, setCount] = React.useState(0);
+
+                return (
+                    <div>
+                        {/* We use an arrow function directly in the onClick handler.
+                            This makes the code much more concise. */}
+                        <button
+                            onClick={() =>
+                                setCount((prevCount) => prevCount + 1)
+                            }
+                        >
+                            Increment
+                        </button>
+                        <button
+                            onClick={() =>
+                                setCount((prevCount) => prevCount - 1)
+                            }
+                        >
+                            Decrement
+                        </button>
+                        <button onClick={() => setCount(0)}>Reset</button>
+                        <h1>count: {count}</h1>
+                    </div>
+                );
+            }
+
+            // Render the Counter component.
+            root.render(<Counts />);
+        </script>
+    </body>
+</html>

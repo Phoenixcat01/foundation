@@ -12,37 +12,59 @@
     <body>
         <div id="root"></div>
         <script type="text/babel">
+            // This is a Class Component named 'Counter'.
+            // It manages its own internal state.
             class Counter extends React.Component {
+                // The constructor is a special method called when the component is created.
                 constructor(props) {
+                    // super(props) is a mandatory call to the parent class's constructor.
+                    // This ensures the component is properly initialized.
                     super(props);
+
+                    // We initialize the component's state.
+                    // 'this.state' is an object that holds data that can change over time.
                     this.state = {
                         count: 0,
                     };
 
+                    // We bind the 'this' context for each method. This is crucial for class components,
+                    // as it ensures the methods can correctly access 'this.state' and 'this.setState'.
                     this.increment = this.increment.bind(this);
                     this.decrement = this.decrement.bind(this);
                     this.reset = this.reset.bind(this);
                 }
 
+                // This method increments the count.
+                // It uses the safe setState syntax with a function that receives the previous state.
                 increment() {
                     this.setState((prevIncrement) => ({
                         count: prevIncrement.count + 1,
                     }));
                 }
+
+                // This method decrements the count.
+                // It also uses the safe setState function syntax.
                 decrement() {
                     this.setState((prevDecrement) => ({
                         count: prevDecrement.count - 1,
                     }));
                 }
+
+                // This method resets the count to zero.
+                // It uses the simpler object syntax because it doesn't depend on the previous state.
                 reset() {
                     this.setState({
                         count: 0,
                     });
                 }
 
+                // The render method is required for all class components.
+                // It returns the JSX that defines what the component will display.
                 render() {
                     return (
                         <div>
+                            {/* We use event handlers (onClick) to call our methods.
+                            The 'this' context has been bound in the constructor. */}
                             <button className="inc" onClick={this.increment}>
                                 Increment!
                             </button>
@@ -52,12 +74,14 @@
                             <button className="reset" onClick={this.reset}>
                                 Reset
                             </button>
+                            {/* We display the current value of the count from the state. */}
                             <h1>Current Count: {this.state.count}</h1>
                         </div>
                     );
                 }
             }
 
+            // This is the old rendering method for React before version 18.
             ReactDOM.render(<Counter />, document.getElementById("root"));
         </script>
     </body>

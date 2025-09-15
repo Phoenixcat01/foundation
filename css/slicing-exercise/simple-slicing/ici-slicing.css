@@ -1,0 +1,52 @@
+body {
+    background-color: #FFF1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sh {
+    width: 49px;
+    height: 180px;
+}
+
+.one,
+.thr {
+    background: #F2A3AB;
+}
+
+.two {
+    --outer-radius: 90px;
+    /* Outer radius */
+    --thickness: 50px;
+    /* Ring thickness */
+    --color: #84B9C7;
+    /* Ring color */
+
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    /* Background color (matches hole) */
+}
+
+.ring {
+    position: absolute;
+    width: calc(var(--outer-radius) * 2 - var(--thickness) * 2);
+    height: calc(var(--outer-radius) * 2 - var(--thickness) * 2);
+    border: var(--thickness) solid var(--color);
+    border-radius: 50%;
+}
+
+/* Left half */
+.left {
+    width: var(--outer-radius);
+    height: calc(var(--outer-radius) * 2);
+}
+
+.left .ring {
+    left: 0;
+    top: 0;
+}

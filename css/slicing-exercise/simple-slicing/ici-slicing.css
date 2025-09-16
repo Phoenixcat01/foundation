@@ -1,6 +1,7 @@
 body {
-    background-color: #FFF1F1;
+    background: rgb(41, 90, 78);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 45px;
@@ -8,12 +9,24 @@ body {
     overflow: hidden;
 }
 
+/* first method */
+.container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    width: 500px;
+    padding: 18px;
+    border: 5px solid;
+    background-color: #FFF1F1;
+}
+
 .sh {
     width: 49px;
     height: 180px;
 }
 
-.one,
+.container-1 .sh.one,
 .thr {
     background: #F2A3AB;
 }
@@ -25,7 +38,6 @@ body {
     /* Ring thickness */
     --color: #84B9C7;
     /* Ring color */
-
     position: relative;
     overflow: hidden;
     background: transparent;
@@ -49,4 +61,44 @@ body {
 .left .ring {
     left: 0;
     top: 0;
+}
+
+/* seconds method */
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    width: 500px;
+    padding: 18px;
+    border: 5px solid;
+    background-color: #FFF1F1;
+}
+
+.container-2 .shp {
+    height: 180px;
+}
+
+.container-2 .shp.one,
+.container-2 .shp.thr {
+    width: 49px;
+    background-color: #84B9C7;
+}
+
+.container-2 .shp.two {
+    background-color: #F2A3AB;
+    width: 90px;
+    border-radius: 90px 0 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-2 .shp.two::before {
+    content: '';
+    background-color: #FFF1F1;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(60%, 60%);
 }

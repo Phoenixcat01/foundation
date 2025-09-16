@@ -1,0 +1,58 @@
+body {
+    background: #FFFBDA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.block {
+    width: 360px;
+    height: 60px;
+    border-radius: 50px;
+    background: #dd6b4d;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    column-gap: 55px;
+}
+
+.crl {
+    width: 40px;
+    height: 40px;
+    justify-self: center;
+    border-radius: 50px;
+}
+
+.one {
+    background: #30383F;
+    margin: 20px auto;
+}
+
+.one .cr-1,
+.one .cr-2,
+.one .cr-3 {
+    background: #D96C7B;
+}
+
+.two {
+    background: #D96C7B;
+    margin: 40px auto;
+}
+
+.two .cr-1,
+.two .cr-2,
+.two .cr-3 {
+    background: #30383F;
+}
+
+.thr {
+    background: #30383F;
+    margin: 10px auto;
+}
+
+.thr .cr-1,
+.thr .cr-2,
+.thr .cr-3 {
+    background: #D96C7B;
+}

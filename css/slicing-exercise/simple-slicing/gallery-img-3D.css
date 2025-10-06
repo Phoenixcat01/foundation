@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(226, 226, 226);
+}
+
+.container {
+    perspective: 1200px;
+    scale: 0.2;
+    filter: brightness(0) invert(1);
+    animation: zoom-on-load 3s ease forwards;
+}
+
+@keyframes zoom-on-load {
+    to {
+        scale: 1;
+        filter: brightness(1) invert(0);
+    }
+}
+
+.gallery {
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) translateY(-100px);
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: rotate-Y-axis 30s linear infinite;
+}
+
+@keyframes rotate-Y-axis {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.imgbox {
+    position: absolute;
+    height: 200px;
+    width: 150px;
+    background-color: green;
+    transform: rotateY(calc((36deg)*var(--i))) rotateX(8deg) translateZ(600px);
+    -webkit-box-reflect: below 3px linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3));
+}
+
+.imgbox img {
+    height: inherit;
+    width: inherit;
+}

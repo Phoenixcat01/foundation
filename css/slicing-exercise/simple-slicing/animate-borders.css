@@ -37,27 +37,15 @@ body {
     z-index: -1;
     padding: 3px;
     border-radius: 10px;
-    /* animation: 2s spin linear infinite; */
+    animation: 2s spin linear infinite;
 }
 
 .card::before {
-    /* filter: blur(1.5rem); */
-    /* opacity: 0.5; */
-    background-image: conic-gradient(from var(--angle), transparent 80%, #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-    /* animation: 2s spin-other linear infinite; */
+    filter: blur(1.5rem);
+    opacity: 0.5;
 }
 
 @keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-
-    to {
-        --angle: 360deg;
-    }
-}
-
-@keyframes spin-other {
     from {
         --angle: 0deg;
     }

@@ -32,3 +32,13 @@ input {
     transition: 0.1s ease;
     z-index: 1111;
 }
+
+.labelline {
+    position: absolute;
+    color: aliceblue;
+    font-size: 1.6em;
+    padding: 0 25px;
+    margin: 0 20px;
+    background: rgb(22, 22, 22);
+    transition: 0.2s ease;
+}

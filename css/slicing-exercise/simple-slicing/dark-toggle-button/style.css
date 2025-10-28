@@ -30,3 +30,9 @@ label::after {
     border-radius: 100px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
+
+input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}

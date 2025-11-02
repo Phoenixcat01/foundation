@@ -15,7 +15,7 @@ label {
     display: block;
     background-color: #ebebeb;
     border-radius: 100px;
-    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -3px 15px rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: 0.3s;
 }
@@ -44,7 +44,24 @@ input:checked+label {
 }
 
 input:checked+label::after {
-    left: 310px;
-    /* transform: translate(-100%); */
+    left: 490px;
+    transform: translate(-100%);
     background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label:active::after {
+    width: 260px;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: aliceblue;
+    position: absolute;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+input:checked+label+.background {
+    background: #1e1e1f;
 }

@@ -65,3 +65,19 @@ label:active::after {
 input:checked+label+.background {
     background: #1e1e1f;
 }
+
+label svg {
+    position: absolute;
+    width: 120px;
+    top: 40px;
+    left: 40px;
+    z-index: 100;
+}
+
+label svg.moon {
+    left: 340px;
+}
+
+input:checked+label svg.sun {
+    fill: aliceblue;
+}

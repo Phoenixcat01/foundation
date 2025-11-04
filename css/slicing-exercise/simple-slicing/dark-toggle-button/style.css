@@ -79,5 +79,9 @@ label svg.moon {
 }
 
 input:checked+label svg.sun {
+    color: #3a3a3a;
+}
+
+input:checked+label svg.moon {
     fill: aliceblue;
 }
